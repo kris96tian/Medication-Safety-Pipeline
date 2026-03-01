@@ -1,0 +1,12 @@
+drug_explorer:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: druguser
+      password: drugpass
+      port: 5432
+      dbname: drugdb
+      schema: analytics   # dbt will create its models in this schema
+      threads: 1
