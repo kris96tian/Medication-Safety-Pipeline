@@ -1,7 +1,6 @@
-# Drug Interaction Explorer
+# Medication Safety Pipeline
 
-A data pipeline that pulls adverse drug event reports from the [OpenFDA public API](https://open.fda.gov/apis/drug/event/), loads them into a Postgres database, and transforms them into analytics-ready tables using dbt.
-
+A pipeline that turns raw FDA medication reports into a searchable database of side effects and patient outcomes, using real data from the [OpenFDA public API](https://open.fda.gov/apis/drug/event/).
 
 ---
 
@@ -38,7 +37,7 @@ mart_reaction_frequency  # reaction counts per drug
 ## Project structure
 
 ```
-drug-interaction-explorer/
+medication-safety-pipeline/
 ├── docker-compose.yml          # postgres + pgadmin
 ├── requirements.txt
 ├── .env                        # db credentials (not committed)
