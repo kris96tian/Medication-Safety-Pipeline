@@ -1,0 +1,1 @@
+{"_invocation_id": "7e5c6c4d-e1ec-489e-9b4c-b37a254da801", "linked": {"0": {"name": "model.drug_explorer.stg_drug_events", "type": "model", "succ": [1, 2]}, "1": {"name": "model.drug_explorer.mart_reaction_frequency", "type": "model"}, "2": {"name": "model.drug_explorer.mart_drug_summary", "type": "model"}}}

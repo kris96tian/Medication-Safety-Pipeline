@@ -1,0 +1,435 @@
+[0m04:28:45.395264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f5a0a3ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f56239490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f56239400>]}
+
+
+============================== 04:28:45.402120 | f172527f-5422-45be-b1d1-aa027fb76b31 ==============================
+[0m04:28:45.402120 [info ] [MainThread]: Running with dbt=1.11.6
+[0m04:28:45.403284 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt debug', 'profiles_dir': './profiles', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'quiet': 'False', 'printer_width': '80', 'log_path': '/workspaces/drug-interaction-explorer/dbt_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'write_json': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'empty': 'None', 'use_colors': 'True', 'debug': 'False'}
+[0m04:28:45.418321 [info ] [MainThread]: dbt version: 1.11.6
+[0m04:28:45.419301 [info ] [MainThread]: python version: 3.12.1
+[0m04:28:45.420130 [info ] [MainThread]: python path: /home/codespace/.python/current/bin/python3
+[0m04:28:45.420931 [info ] [MainThread]: os info: Linux-6.8.0-1044-azure-x86_64-with-glibc2.39
+[0m04:28:45.522019 [info ] [MainThread]: Using profiles dir at ./profiles
+[0m04:28:45.523565 [info ] [MainThread]: Using profiles.yml file at ./profiles/profiles.yml
+[0m04:28:45.524556 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/drug-interaction-explorer/dbt_project/dbt_project.yml
+[0m04:28:45.525806 [info ] [MainThread]: adapter type: postgres
+[0m04:28:45.526772 [info ] [MainThread]: adapter version: 1.10.0
+[0m04:28:45.665122 [info ] [MainThread]: Configuration:
+[0m04:28:45.666138 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m04:28:45.666957 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m04:28:45.667807 [info ] [MainThread]: Required dependencies:
+[0m04:28:45.668613 [debug] [MainThread]: Executing "git --help"
+[0m04:28:45.673059 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m04:28:45.674076 [debug] [MainThread]: STDERR: "b''"
+[0m04:28:45.674988 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m04:28:45.676047 [info ] [MainThread]: Connection:
+[0m04:28:45.677065 [info ] [MainThread]:   host: localhost
+[0m04:28:45.677884 [info ] [MainThread]:   port: 5432
+[0m04:28:45.678672 [info ] [MainThread]:   user: druguser
+[0m04:28:45.679582 [info ] [MainThread]:   database: drugdb
+[0m04:28:45.680355 [info ] [MainThread]:   schema: analytics
+[0m04:28:45.681134 [info ] [MainThread]:   connect_timeout: 10
+[0m04:28:45.682060 [info ] [MainThread]:   role: None
+[0m04:28:45.682834 [info ] [MainThread]:   search_path: None
+[0m04:28:45.683762 [info ] [MainThread]:   keepalives_idle: 0
+[0m04:28:45.684520 [info ] [MainThread]:   sslmode: None
+[0m04:28:45.685313 [info ] [MainThread]:   sslcert: None
+[0m04:28:45.686066 [info ] [MainThread]:   sslkey: None
+[0m04:28:45.686822 [info ] [MainThread]:   sslrootcert: None
+[0m04:28:45.687604 [info ] [MainThread]:   application_name: dbt
+[0m04:28:45.688517 [info ] [MainThread]:   retries: 1
+[0m04:28:45.689687 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m04:28:45.920171 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m04:28:45.990984 [debug] [MainThread]: Using postgres connection "debug"
+[0m04:28:45.991566 [debug] [MainThread]: On debug: select 1 as id
+[0m04:28:45.992029 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m04:28:46.001424 [debug] [MainThread]: SQL status: SELECT 1 in 0.009 seconds
+[0m04:28:46.002689 [debug] [MainThread]: On debug: Close
+[0m04:28:46.003271 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m04:28:46.004001 [info ] [MainThread]: [32mAll checks passed![0m
+[0m04:28:46.007053 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.67532796, "process_in_blocks": "19752", "process_kernel_time": 0.294855, "process_mem_max_rss": "133828", "process_out_blocks": "80", "process_user_time": 3.023752}
+[0m04:28:46.007982 [debug] [MainThread]: Command `dbt debug` succeeded at 04:28:46.007810 after 0.68 seconds
+[0m04:28:46.008572 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m04:28:46.009039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f55f2d130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f54f5fa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f5a0a3ef0>]}
+[0m04:28:46.009576 [debug] [MainThread]: Flushing usage events
+[0m04:28:46.400392 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:29:47.602961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949efdacfe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949effe1f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949f20bd160>]}
+
+
+============================== 04:29:47.608373 | 7e5c6c4d-e1ec-489e-9b4c-b37a254da801 ==============================
+[0m04:29:47.608373 [info ] [MainThread]: Running with dbt=1.11.6
+[0m04:29:47.610328 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'profiles_dir': './profiles', 'log_format': 'default', 'log_path': '/workspaces/drug-interaction-explorer/dbt_project/logs', 'write_json': 'True', 'quiet': 'False', 'no_print': 'None', 'introspect': 'True', 'invocation_command': 'dbt run', 'printer_width': '80', 'use_colors': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'target_path': 'None', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False'}
+[0m04:29:47.898716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ef6663f0>]}
+[0m04:29:47.965642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949f0384620>]}
+[0m04:29:47.966681 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m04:29:48.145398 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m04:29:48.146262 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m04:29:48.146927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ee51c950>]}
+[0m04:29:49.218245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ed9cfd40>]}
+[0m04:29:49.275395 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/drug-interaction-explorer/dbt_project/target/manifest.json
+[0m04:29:49.277519 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/drug-interaction-explorer/dbt_project/target/semantic_manifest.json
+[0m04:29:49.293135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ed9cdeb0>]}
+[0m04:29:49.293860 [info ] [MainThread]: Found 3 models, 464 macros
+[0m04:29:49.294467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ed996120>]}
+[0m04:29:49.296415 [info ] [MainThread]: 
+[0m04:29:49.297038 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m04:29:49.297577 [info ] [MainThread]: 
+[0m04:29:49.298306 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m04:29:49.303442 [debug] [ThreadPool]: Acquiring new postgres connection 'list_drugdb'
+[0m04:29:49.338437 [debug] [ThreadPool]: Using postgres connection "list_drugdb"
+[0m04:29:49.339082 [debug] [ThreadPool]: On list_drugdb: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "connection_name": "list_drugdb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m04:29:49.339601 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:29:49.352455 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.013 seconds
+[0m04:29:49.355238 [debug] [ThreadPool]: On list_drugdb: Close
+[0m04:29:49.359056 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_drugdb, now create_drugdb_analytics)
+[0m04:29:49.360541 [debug] [ThreadPool]: Creating schema "database: "drugdb"
+schema: "analytics"
+"
+[0m04:29:49.372519 [debug] [ThreadPool]: Using postgres connection "create_drugdb_analytics"
+[0m04:29:49.373477 [debug] [ThreadPool]: On create_drugdb_analytics: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "connection_name": "create_drugdb_analytics"} */
+create schema if not exists "analytics"
+[0m04:29:49.377584 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:29:49.395402 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.021 seconds
+[0m04:29:49.397541 [debug] [ThreadPool]: On create_drugdb_analytics: COMMIT
+[0m04:29:49.398392 [debug] [ThreadPool]: Using postgres connection "create_drugdb_analytics"
+[0m04:29:49.399172 [debug] [ThreadPool]: On create_drugdb_analytics: COMMIT
+[0m04:29:49.401754 [debug] [ThreadPool]: SQL status: COMMIT in 0.002 seconds
+[0m04:29:49.402584 [debug] [ThreadPool]: On create_drugdb_analytics: Close
+[0m04:29:49.410834 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_drugdb_analytics, now list_drugdb_analytics)
+[0m04:29:49.437094 [debug] [ThreadPool]: Using postgres connection "list_drugdb_analytics"
+[0m04:29:49.440389 [debug] [ThreadPool]: On list_drugdb_analytics: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "connection_name": "list_drugdb_analytics"} */
+select
+      'drugdb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'drugdb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'drugdb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m04:29:49.441206 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:29:49.478243 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.037 seconds
+[0m04:29:49.481416 [debug] [ThreadPool]: On list_drugdb_analytics: ROLLBACK
+[0m04:29:49.484565 [debug] [ThreadPool]: On list_drugdb_analytics: Close
+[0m04:29:49.507602 [debug] [MainThread]: Using postgres connection "master"
+[0m04:29:49.509079 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m04:29:49.510028 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m04:29:49.530482 [debug] [MainThread]: SQL status: SELECT 0 in 0.020 seconds
+[0m04:29:49.533307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ed9b7a70>]}
+[0m04:29:49.534452 [debug] [MainThread]: On master: ROLLBACK
+[0m04:29:49.535660 [debug] [MainThread]: On master: COMMIT
+[0m04:29:49.536560 [debug] [MainThread]: Using postgres connection "master"
+[0m04:29:49.537581 [debug] [MainThread]: On master: COMMIT
+[0m04:29:49.538810 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m04:29:49.539629 [debug] [MainThread]: On master: Close
+[0m04:29:49.563076 [debug] [Thread-1 (]: Began running node model.drug_explorer.stg_drug_events
+[0m04:29:49.564356 [info ] [Thread-1 (]: 1 of 3 START sql view model analytics.stg_drug_events .......................... [RUN]
+[0m04:29:49.565519 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_drugdb_analytics, now model.drug_explorer.stg_drug_events)
+[0m04:29:49.566463 [debug] [Thread-1 (]: Began compiling node model.drug_explorer.stg_drug_events
+[0m04:29:49.585034 [debug] [Thread-1 (]: Writing injected SQL for node "model.drug_explorer.stg_drug_events"
+[0m04:29:49.598230 [debug] [Thread-1 (]: Began executing node model.drug_explorer.stg_drug_events
+[0m04:29:49.662153 [debug] [Thread-1 (]: Writing runtime sql for node "model.drug_explorer.stg_drug_events"
+[0m04:29:49.663383 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.stg_drug_events"
+[0m04:29:49.664013 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.stg_drug_events"} */
+
+  create view "drugdb"."analytics"."stg_drug_events__dbt_tmp"
+    
+    
+  as (
+    -- staging model: take the raw messy data and clean it up a bit
+-- this is the "transform" part of ETL
+-- we cast types, rename things, and decode the fda codes into readable values
+
+with source as (
+    -- just pull everything from the raw table
+    select * from raw_drug_events
+),
+
+cleaned as (
+    select
+        report_id,
+        lower(trim(drug_name))                          as drug_name,
+
+        -- fda sends dates as strings like "20230115", convert to real date
+        to_date(receive_date, 'YYYYMMDD')               as report_date,
+
+        -- fda uses 1/2 codes for serious, make it readable
+        case serious
+            when '1' then 'serious'
+            when '2' then 'not serious'
+            else 'unknown'
+        end                                             as severity,
+
+        country,
+
+        -- age comes as text, cast to number (some values are null or weird)
+        nullif(patient_age, '')::numeric                as patient_age,
+
+        -- fda uses 1/2 for sex
+        case patient_sex
+            when '1' then 'male'
+            when '2' then 'female'
+            else 'unknown'
+        end                                             as patient_sex,
+
+        reactions,
+        loaded_at
+
+    from source
+    -- filter out rows with no report id (bad data)
+    where report_id is not null
+)
+
+select * from cleaned
+  );
+[0m04:29:49.664587 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:29:49.674058 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.009 seconds
+[0m04:29:49.680987 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.stg_drug_events"
+[0m04:29:49.681612 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.stg_drug_events"} */
+alter table "drugdb"."analytics"."stg_drug_events__dbt_tmp" rename to "stg_drug_events"
+[0m04:29:49.682726 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m04:29:49.705090 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: COMMIT
+[0m04:29:49.706761 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.stg_drug_events"
+[0m04:29:49.707699 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: COMMIT
+[0m04:29:49.714714 [debug] [Thread-1 (]: SQL status: COMMIT in 0.006 seconds
+[0m04:29:49.745319 [debug] [Thread-1 (]: Applying DROP to: "drugdb"."analytics"."stg_drug_events__dbt_backup"
+[0m04:29:49.752405 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.stg_drug_events"
+[0m04:29:49.753054 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.stg_drug_events"} */
+drop view if exists "drugdb"."analytics"."stg_drug_events__dbt_backup" cascade
+[0m04:29:49.753993 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m04:29:49.756488 [debug] [Thread-1 (]: On model.drug_explorer.stg_drug_events: Close
+[0m04:29:49.758828 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949f0486840>]}
+[0m04:29:49.759904 [info ] [Thread-1 (]: 1 of 3 OK created sql view model analytics.stg_drug_events ..................... [[32mCREATE VIEW[0m in 0.19s]
+[0m04:29:49.760783 [debug] [Thread-1 (]: Finished running node model.drug_explorer.stg_drug_events
+[0m04:29:49.761831 [debug] [Thread-1 (]: Began running node model.drug_explorer.mart_drug_summary
+[0m04:29:49.762456 [info ] [Thread-1 (]: 2 of 3 START sql table model analytics.mart_drug_summary ....................... [RUN]
+[0m04:29:49.763171 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.drug_explorer.stg_drug_events, now model.drug_explorer.mart_drug_summary)
+[0m04:29:49.763731 [debug] [Thread-1 (]: Began compiling node model.drug_explorer.mart_drug_summary
+[0m04:29:49.767672 [debug] [Thread-1 (]: Writing injected SQL for node "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.768790 [debug] [Thread-1 (]: Began executing node model.drug_explorer.mart_drug_summary
+[0m04:29:49.795115 [debug] [Thread-1 (]: Writing runtime sql for node "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.796069 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.796673 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_drug_summary"} */
+
+  
+    
+
+  create  table "drugdb"."analytics"."mart_drug_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- mart model: the final aggregated table that answers real questions
+-- "which drugs have the most serious adverse events reported?"
+
+with base as (
+    select * from "drugdb"."analytics"."stg_drug_events"
+),
+
+summary as (
+    select
+        drug_name,
+
+        count(*)                                                as total_reports,
+
+        -- how many of those reports were flagged as serious
+        count(*) filter (where severity = 'serious')            as serious_reports,
+
+        -- percentage of reports that are serious , so useful for comparison
+        round(
+            count(*) filter (where severity = 'serious') * 100.0
+            / nullif(count(*), 0),
+        1)                                                      as pct_serious,
+
+        -- average patient age across all reports for this drug
+        round(avg(patient_age), 1)                              as avg_patient_age,
+
+        -- top countries reporting issues with this drug
+        mode() within group (order by country)                  as most_common_country,
+
+        -- date range of the reports we have
+        min(report_date)                                        as earliest_report,
+        max(report_date)                                        as latest_report
+
+    from base
+    group by drug_name
+)
+
+select * from summary
+order by total_reports desc
+  );
+  
+[0m04:29:49.797198 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:29:49.823637 [debug] [Thread-1 (]: SQL status: SELECT 7 in 0.026 seconds
+[0m04:29:49.830998 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.831593 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_drug_summary"} */
+alter table "drugdb"."analytics"."mart_drug_summary__dbt_tmp" rename to "mart_drug_summary"
+[0m04:29:49.832591 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m04:29:49.834342 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: COMMIT
+[0m04:29:49.834856 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.835342 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: COMMIT
+[0m04:29:49.837436 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m04:29:49.841805 [debug] [Thread-1 (]: Applying DROP to: "drugdb"."analytics"."mart_drug_summary__dbt_backup"
+[0m04:29:49.846813 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_drug_summary"
+[0m04:29:49.847604 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_drug_summary"} */
+drop table if exists "drugdb"."analytics"."mart_drug_summary__dbt_backup" cascade
+[0m04:29:49.856391 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m04:29:49.865461 [debug] [Thread-1 (]: On model.drug_explorer.mart_drug_summary: Close
+[0m04:29:49.868053 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949ee1d7a10>]}
+[0m04:29:49.870001 [info ] [Thread-1 (]: 2 of 3 OK created sql table model analytics.mart_drug_summary .................. [[32mSELECT 7[0m in 0.10s]
+[0m04:29:49.871519 [debug] [Thread-1 (]: Finished running node model.drug_explorer.mart_drug_summary
+[0m04:29:49.872612 [debug] [Thread-1 (]: Began running node model.drug_explorer.mart_reaction_frequency
+[0m04:29:49.873821 [info ] [Thread-1 (]: 3 of 3 START sql table model analytics.mart_reaction_frequency ................. [RUN]
+[0m04:29:49.875030 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.drug_explorer.mart_drug_summary, now model.drug_explorer.mart_reaction_frequency)
+[0m04:29:49.875973 [debug] [Thread-1 (]: Began compiling node model.drug_explorer.mart_reaction_frequency
+[0m04:29:49.881386 [debug] [Thread-1 (]: Writing injected SQL for node "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:49.882487 [debug] [Thread-1 (]: Began executing node model.drug_explorer.mart_reaction_frequency
+[0m04:29:49.895208 [debug] [Thread-1 (]: Writing runtime sql for node "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:49.896549 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:49.902021 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_reaction_frequency"} */
+
+  
+    
+
+  create  table "drugdb"."analytics"."mart_reaction_frequency__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- mart model: which reactions show up most often per drug
+-- reactions in the raw data come as a comma-separated string
+-- we unnest them here so each reaction gets its own row
+
+with base as (
+    select * from "drugdb"."analytics"."stg_drug_events"
+),
+
+-- split the commaseparated reactions into individual rows
+unnested as (
+    select
+        drug_name,
+        severity,
+        trim(reaction_term)     as reaction
+    from base,
+    -- unnest splits "nausea, headache, vomiting" into 3 separate rows
+    lateral unnest(string_to_array(reactions, ',')) as reaction_term
+    where reactions is not null and reactions != ''
+),
+
+aggregated as (
+    select
+        drug_name,
+        reaction,
+        count(*)                as report_count,
+        -- what share of reactions for this drug are serious
+        round(
+            count(*) filter (where severity = 'serious') * 100.0
+            / nullif(count(*), 0),
+        1)                      as pct_serious
+
+    from unnested
+    -- skip empty strings after trimming
+    where length(trim(reaction)) > 0
+    group by drug_name, reaction
+)
+
+select * from aggregated
+order by drug_name, report_count desc
+  );
+  
+[0m04:29:49.905814 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:29:49.965635 [debug] [Thread-1 (]: SQL status: SELECT 1729 in 0.062 seconds
+[0m04:29:49.985008 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:49.985952 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_reaction_frequency"} */
+alter table "drugdb"."analytics"."mart_reaction_frequency__dbt_tmp" rename to "mart_reaction_frequency"
+[0m04:29:49.991846 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m04:29:49.999196 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: COMMIT
+[0m04:29:50.000537 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:50.001467 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: COMMIT
+[0m04:29:50.003682 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m04:29:50.012361 [debug] [Thread-1 (]: Applying DROP to: "drugdb"."analytics"."mart_reaction_frequency__dbt_backup"
+[0m04:29:50.025473 [debug] [Thread-1 (]: Using postgres connection "model.drug_explorer.mart_reaction_frequency"
+[0m04:29:50.031345 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "drug_explorer", "target_name": "dev", "node_id": "model.drug_explorer.mart_reaction_frequency"} */
+drop table if exists "drugdb"."analytics"."mart_reaction_frequency__dbt_backup" cascade
+[0m04:29:50.032855 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m04:29:50.035699 [debug] [Thread-1 (]: On model.drug_explorer.mart_reaction_frequency: Close
+[0m04:29:50.038737 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5c6c4d-e1ec-489e-9b4c-b37a254da801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949de619e50>]}
+[0m04:29:50.039903 [info ] [Thread-1 (]: 3 of 3 OK created sql table model analytics.mart_reaction_frequency ............ [[32mSELECT 1729[0m in 0.16s]
+[0m04:29:50.041181 [debug] [Thread-1 (]: Finished running node model.drug_explorer.mart_reaction_frequency
+[0m04:29:50.042539 [debug] [MainThread]: On master: COMMIT
+[0m04:29:50.043029 [debug] [MainThread]: Using postgres connection "master"
+[0m04:29:50.043466 [debug] [MainThread]: On master: COMMIT
+[0m04:29:50.043917 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m04:29:50.052129 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m04:29:50.052718 [debug] [MainThread]: On master: Close
+[0m04:29:50.053431 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:29:50.055277 [debug] [MainThread]: Connection 'model.drug_explorer.mart_reaction_frequency' was properly closed.
+[0m04:29:50.055974 [info ] [MainThread]: 
+[0m04:29:50.056568 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 0.76 seconds (0.76s).
+[0m04:29:50.057722 [debug] [MainThread]: Command end result
+[0m04:29:50.078957 [debug] [MainThread]: Wrote artifact WritableManifest to /workspaces/drug-interaction-explorer/dbt_project/target/manifest.json
+[0m04:29:50.081034 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspaces/drug-interaction-explorer/dbt_project/target/semantic_manifest.json
+[0m04:29:50.086978 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspaces/drug-interaction-explorer/dbt_project/target/run_results.json
+[0m04:29:50.087502 [info ] [MainThread]: 
+[0m04:29:50.088130 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:29:50.088678 [info ] [MainThread]: 
+[0m04:29:50.089221 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m04:29:50.090365 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.5459573, "process_in_blocks": "2616", "process_kernel_time": 0.284589, "process_mem_max_rss": "143544", "process_out_blocks": "2856", "process_user_time": 4.588133}
+[0m04:29:50.091040 [debug] [MainThread]: Command `dbt run` succeeded at 04:29:50.090928 after 2.55 seconds
+[0m04:29:50.091538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949f04b04a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949de65ffe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7949de65fec0>]}
+[0m04:29:50.092044 [debug] [MainThread]: Flushing usage events
+[0m04:29:50.468358 [debug] [MainThread]: An error was encountered while trying to flush usage events
