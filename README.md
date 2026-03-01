@@ -115,6 +115,12 @@ limit 10;
 
 ---
 
+## Results
+
+See [analysis_results.md](analysis_results.md) for query results and findings.
+
+---
+
 ## Data source
 
 OpenFDA Drug Adverse Event API - https://open.fda.gov/apis/drug/event/
