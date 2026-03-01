@@ -40,8 +40,6 @@ mart_reaction_frequency  # reaction counts per drug
 medication-safety-pipeline/
 ├── docker-compose.yml          # postgres + pgadmin
 ├── requirements.txt
-├── .env                        # db credentials (not committed)
-├── .gitignore
 ├── etl/
 │   └── extract_load.py         # extract from FDA, load into postgres
 └── dbt_project/
