@@ -1,16 +1,44 @@
 import requests
 import pandas as pd
 from sqlalchemy import create_engine, text
+from sqlalchemy.engine import URL
 from dotenv import load_dotenv
 import os
 import time
 
 load_dotenv()
 
+
+def _clean_env(value: str | None, default: str) -> str:
+    if value is None:
+        return default
+
+    cleaned = value.strip()
+    if cleaned == "" or cleaned.lower() == "none":
+        return default
+
+    return cleaned
+
+
 # --- db connection ---
-DB_URL = (
-    f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
-    f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+db_user = _clean_env(os.getenv("DB_USER"), "druguser")
+db_password = _clean_env(os.getenv("DB_PASSWORD"), "drugpass")
+db_host = _clean_env(os.getenv("DB_HOST"), "localhost")
+db_name = _clean_env(os.getenv("DB_NAME"), "drugdb")
+db_port_raw = _clean_env(os.getenv("DB_PORT"), "5432")
+
+try:
+    db_port = int(db_port_raw)
+except ValueError as exc:
+    raise ValueError(f"Invalid DB_PORT value: {db_port_raw!r}. Expected an integer.") from exc
+
+DB_URL = URL.create(
+    drivername="postgresql",
+    username=db_user,
+    password=db_password,
+    host=db_host,
+    port=db_port,
+    database=db_name,
 )
 engine = create_engine(DB_URL)
 
