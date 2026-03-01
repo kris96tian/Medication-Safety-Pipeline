@@ -1,0 +1,14 @@
+name: drug_explorer
+version: "1.0.0"
+profile: drug_explorer
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  drug_explorer:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
